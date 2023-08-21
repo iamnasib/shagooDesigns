@@ -115,19 +115,19 @@
           </a> -->
         </div>
       </div>
-      <div class="carousel-item w-full relative">
+      <div class="carousel-item w-full hidden relative">
         <img src="https://i.imgur.com/tji4bhV.jpg" alt="Image 2" class="w-full h-auto max-h-[600px]">
         <div class="carousel-caption absolute bottom-0 left-0 w-full h-full flex flex-col justify-center 
         text-[#d6ad60] bg-[#122620] bg-opacity-40 p-4">
         </div>
       </div>
-      <div class="carousel-item w-full relative">
+      <div class="carousel-item w-full hidden relative">
         <img src="https://i.imgur.com/mROnjJX.jpg" alt="Image 3" class="w-full h-auto max-h-[600px]">
         <div class="carousel-caption absolute bottom-0 left-0 w-full h-full flex flex-col justify-center 
         text-[#d6ad60] bg-[#122620] bg-opacity-40 p-4">
         </div>
       </div>
-      <div class="carousel-item w-full relative">
+      <div class="carousel-item w-full hidden relative">
         <img src="https://i.imgur.com/2YWYhEV.jpg" alt="Image 4" class="w-full h-auto max-h-[600px]">
         <div class="carousel-caption absolute bottom-0 left-0 w-full h-full flex flex-col justify-center 
         text-[#d6ad60] bg-[#122620] bg-opacity-40 p-4">
@@ -358,10 +358,13 @@
               carouselItems.forEach((item, index) => {
                 if (index === currentItemIndex) {
                     item.classList.add('transition-opacity');
-                  item.style.display = 'block';
+                    item.classList.add('block');
+                    item.classList.remove('hidden');
                   
                 } else {
-                  item.style.display = 'none';
+                  item.classList.add('hidden');
+                  item.classList.remove('block');
+                  
                 }
               });
             }
